@@ -13,7 +13,7 @@ class Estacionamento:
         if self.total_vagas_livres_carro == 0:
             print ('não há vagas disponíveis - total:  {}'.format(self.total_vagas_livres_carro))
              
-           
+        Vaga.ocupar()   
         self.total_vagas_livres_carro -= 1
            
         return 
@@ -24,13 +24,13 @@ class Estacionamento:
 class Vaga:
     def __init__(self,Veiculo) -> None:
         super().__init__(self,Veiculo) 
-        self.id = input('Número do id: ')
+        self.id = 1
         self.tipo = Veiculo.tipo
         self.livre = True
         self.placa = Veiculo.placa
 #def para ocupar /desocupar
     def ocupar(self):
-     
+        
         return super().estacionar()
 
     def desocupar(self):
@@ -46,6 +46,7 @@ class Veiculo:
         self.tipo = Veiculo
     
     def estacionar(self):
+        
         print ('Estou estacionado? - {}'.format(self.estacionado))
 
     def sair_da_vaga(self):
