@@ -59,7 +59,7 @@ class Estacionamento:
         self.moto_para_vaga = 1
         self.total_vagas_livres_carro = 5
         self.total_vagas_livres_moto = 5
-        self.exibir_vagas()
+        #self.exibir_vagas()
 
     def exibir_vagas(self):
         tipo = 'carro'
@@ -112,19 +112,18 @@ class Estacionamento:
         num_carros_estacionados = 5 - self.total_vagas_livres_carro 
         num_motos_estacionadas = 5 -  self.total_vagas_livres_moto
 
-        estado += f'  Total de vagas livres de carros: {self.total_vagas_livres_carro}\n'
-        estado += f'  Total de vagas livres de motos: {self.total_vagas_livres_moto}\n'
-        estado += f'  Num carros estacionados: {num_carros_estacionados}\n'
-        estado += f'  Num motos estacionadas: {num_motos_estacionadas}\n'
+        print ( f'  Total de vagas livres de carros: {self.total_vagas_livres_carro}\n')
+        print ( f'  Total de vagas livres de motos: {self.total_vagas_livres_moto}\n')
+        print ( f'  Num carros estacionados: {num_carros_estacionados}\n')
+        print ( f'  Num motos estacionadas: {num_motos_estacionadas}\n')
 
-        for i in range(len(self.vagas_carro)):
-            placa = self.vagas_carro[i].placa
-            estado += f'vaga[{i}]: {placa}; '
-        estado += f'\n  Vagas de moto:\n    '
-
+     
     def __str__(self):
+
         return self.estado_do_estacionamento()
 
 
 carro = Carro('LHL3256' )
 moto = Moto('MZM' )
+e = Estacionamento()
+e.estado_do_estacionamento()
