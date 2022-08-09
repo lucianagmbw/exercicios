@@ -122,14 +122,9 @@ class Estacionamento:
             estado += f'vaga[{i}]: {placa}; '
         estado += f'\n  Vagas de moto:\n    '
 
-
-
     def __str__(self):
         return self.estado_do_estacionamento()
 
+
 carro = Carro('LHL3256' )
-
-
-
-
 moto = Moto('MZM' )
