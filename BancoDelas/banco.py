@@ -22,19 +22,16 @@ class banco_delas:
            
            if self.__saldo > valor_de_saque:
                 self.__saldo -= valor_de_saque
-                print(f'op - Seu saldo atual é de: {self.__saldo}')  
+                print(f'O Seu saldo atual é de: {self.__saldo}')  
            else:
-                limite_negativo = 0 - self.__renda_mensal 
-                novo_saldo = self.__saldo - valor_de_saque
-                if ( novo_saldo > limite_negativo ):
+                
+               
                     print(f'Seu saldo atual é de: {self.__saldo}')  
-                    self.__saldo = novo_saldo  
+                    self.__saldo -= valor_de_saque
                     
                     print(f'Operação realizada mediante cheque especial no valor de {self.__renda_mensal}')
                     print(f'Seu novo saldo é de: {self.__saldo}')     
-                else:
-                    print('operação não realizada!')
-  
+                  
     
     def deposito(self,valor_de_deposito):
         print (f'O saldo atual eh: {self.__saldo} \nValor de deposito:{valor_de_deposito}')
@@ -45,7 +42,7 @@ class conta_corrente_comum(banco_delas):
     def __init__(self, nome, telefone, renda_mensal,sexo):
       super().__init__(nome, telefone, renda_mensal,sexo )
       self.titular = nome  
-      self.telefone = telefone
+      self.__telefone = telefone
       self.__renda_mensal = renda_mensal
 
 class conta_corrente_especial(banco_delas):
@@ -53,5 +50,5 @@ class conta_corrente_especial(banco_delas):
       super().__init__(nome, telefone, renda_mensal,sexo )
 
       self.titular = nome
-      self.telefone = telefone
+      self.__telefone = telefone
       self.__renda_mensal = renda_mensal
