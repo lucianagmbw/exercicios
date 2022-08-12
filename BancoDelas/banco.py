@@ -10,7 +10,7 @@ class banco_delas:
    
     
     def saque(self,valor_de_saque,sexo):
-        if sexo == 1:
+        if self.__sexo == 1:
             if self.__saldo > valor_de_saque:
                 self.__saldo = self.__saldo - valor_de_saque
             else:
@@ -25,9 +25,9 @@ class banco_delas:
                 print(f'O Seu saldo atual é de: {self.__saldo}')  
            else:
                 
-               
+                
                     print(f'Seu saldo atual é de: {self.__saldo}')  
-                    self.__saldo -= valor_de_saque
+                    self.__saldo -= valor_de_saque 
                     
                     print(f'Operação realizada mediante cheque especial no valor de {self.__renda_mensal}')
                     print(f'Seu novo saldo é de: {self.__saldo}')     
